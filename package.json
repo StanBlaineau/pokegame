@@ -1,0 +1,23 @@
+{
+  "name": "pokegame",
+  "version": "1.0.0",
+  "description": "Voltorbataille",
+  "main": "index.html",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanBlaineau/pokegame.git"
+  },
+  "author": "Stan Blaineau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StanBlaineau/pokegame/issues"
+  },
+  "homepage": "https://github.com/StanBlaineau/pokegame#readme"
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokegame</title>
+
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/pokegame.css" />
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <h1>Pokegame</h1>
+            </div> <!-- .col -->
+        </div> <!-- .row -->
+    </div> <!-- .container -->
+
+    <div id="pokevue">
+
+        <div class="inner-vue container-fluid">
+
+            <div class="row">
+                <div class="col-8">
+                    <div class="float-left">
+                        <span class="badge badge-info">Score : {{ score }}</span>
+                    </div>
+
+                    <div class="float-right">
+                         <span v-for="life in lifes" >
+                            <img src="img/coeur.png" class="coeur-life" />
+                        </span>
+                    </div>
+
+                </div> <!-- .col -->
+            </div> <!-- .row -->
+
+            <div id="cards" class="row">
+                <div class="col-8">
+                    <div class="row" v-for="(indexI, i) in matrix" :key="getRowUniqueKey(i)">
+                        <div class="col-2" v-for="(card, j) in matrix[i]" :key="getUniqueKey(i,j)">
+                            <div class="card card-game" @click="guessCard(i,j)" :class="getCardClassClass(i, j, card.guessed)">
+                                <div class="card-body">
+
+                                    <span class="numberGuess bomb" v-if="guessMatrix[i][j][0]">B</span>
+                                    <span class="numberGuess un" v-if="guessMatrix[i][j][1]">1</span>
+                                    <span class="numberGuess deux" v-if="guessMatrix[i][j][2]">2</span>
+                                    <span class="numberGuess trois" v-if="guessMatrix[i][j][3]">3</span>
+
+                                     <span v-if="card.guessed">
+                                        <img src="img/bomberman.jpg" class="img-fluid" v-if="0 === card.value" />
+                                        <span v-else>{{ card.value }}</span>
+                                    </span>
+                                    <span v-else>?</span>
+
+                                </div>  <!-- .card-body -->
+                            </div> <!-- .card -->
+                        </div> <!-- .col -->
+
+                        <div class="col-2">
+                            <div class="card card-side">
+                                <div class="card-body">
+                                    <span class="card-total">total: {{ sides.lines[i].total }}</span>
+                                    <hr/>
+                                    <span class="card-bomb">bomb: {{ sides.lines[i].bomb }}</span>
+                                </div>  <!-- .card-body -->
+                            </div> <!-- .card -->
+                        </div> <!-- .col -->
+
+                    </div> <!-- .row -->
+
+                    <div class="row">
+                        <div class="col-2" v-for="column in sides.columns">
+                            <div class="card card-side">
+                                <div class="card-body">
+                                    <span class="card-total">total: {{ column.total }}</span>
+                                    <hr/>
+                                    <span class="card-bomb">bomb: {{ column.bomb }}</span>
+                                </div>  <!-- .card-body -->
+                            </div> <!-- .card -->
+                        </div> <!-- .col -->
+                    </div> <!-- .row -->
+
+                </div> <!-- .col -->
+
+                <div class="col-4 text-center">
+
+                    <div class="gameboard">
+
+                        <span class="badge badge-info">Level : {{ level }}</span>
+                        <span class="badge badge-info">Score total : {{ totalScore }}</span>
+
+                        <div class="row alert" :class="getConsigneClasses()">
+                            <div class="col">
+                                <p class="consigne">
+                                    <span v-show="!states.end">
+                                        Retournez les cartes, mais ne tombez pas sur la bombe !!
+                                    </span>
+                                    <span v-show="states.end && states.success">
+                                        Bravo ! Vous avez tout trouvé !<br/>
+                                        <span class="btn btn-lg btn-success" @click="nextLevel()">Niveau Suivant</span>
+                                    </span>
+
+                                    <span v-show="states.end && !states.success">
+                                        BOOOUM ! Perdu, mais vous pouvez recommencer ;)<br/>
+                                        <span class="btn btn-primary" @click="restart">Recommencer</span>
+                                    </span>
+                                </p>  <!-- .consigne -->
+                            </div> <!-- .col -->
+                        </div> <!-- .row -->
+
+                        <fieldset>
+                            <legend>Mémo</legend>
+                            <span class="btn btn-lg btn-danger" @click="setCardGuess(0)">B</span>
+                            <span class="btn btn-lg btn-warning" @click="setCardGuess(1)">1</span>
+                            <br/><br/>
+                            <span class="btn btn-lg btn-primary" @click="setCardGuess(2)">2</span>
+                            <span class="btn btn-lg btn-success" @click="setCardGuess(3)">3</span>
+                            <br/><br/>
+                            <em>Déplacez le curseur avec q,s,d,z et annotez les cartes avec les boutons ci-dessus</em>
+                        </fieldset>
+                    </div> <!-- .gameboard -->
+
+                </div> <!-- .col -->
+
+            </div> <!-- #cards.container -->
+        </div> <!-- .inner-vue -->
+    </div> <!-- #pokevue -->
+
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/vue.js"></script>
+
+    <script src="js/const.js"></script>
+    <script src="js/algo.js"></script>
+    <script src="js/pokegame.js"></script>
+</body>
+</html>

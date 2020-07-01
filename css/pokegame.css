@@ -1,0 +1,86 @@
+hr {
+    margin: 1px;
+}
+
+.row {
+    margin: 10px 0;
+}
+
+.card {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.card-body {
+    position: relative;
+}
+
+.numberGuess {
+    position: absolute;
+    font-size: 16px;
+    color: #D25454;
+}
+
+.numberGuess.bomb {
+    top: 0;
+    left: 5px;
+}
+
+.numberGuess.un {
+    top: 0;
+    right: 5px;
+}
+
+.numberGuess.deux {
+    bottom: 0;
+    left: 5px;
+}
+
+.numberGuess.trois {
+    bottom: 0;
+    right: 5px;
+}
+
+.card-game {
+    font-size: 35px;
+    color: #222222;
+    background-color: #fafafa;
+}
+
+.card-game.guessed {
+    border-color: #0000EE;
+    background-color: #47ecee;
+    color: #0000EE;
+}
+
+.card-game:hover {
+    border-color: #0000EE;
+    color: #0000EE;
+    cursor: pointer;
+}
+
+.card-game.cursoredCard {
+    border: 3px solid #E00;
+    color: #E00;
+}
+
+.card-side, .card-side .card-body {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.card-side .card-total {
+    color: #0A0;
+}
+
+.card-side .card-bomb {
+    color: #C00;
+}
+
+#pokevue .badge { font-size: 20px; }
+
+.coeur-life {
+    margin: 0 5px;
+    width: 40px;
+}

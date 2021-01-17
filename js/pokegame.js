@@ -1,6 +1,3 @@
-
-
-
 let vue = new Vue({
     el: '#pokevue',
     data: {
@@ -25,14 +22,6 @@ let vue = new Vue({
             i: 0,
             j: 0
         }
-    },
-
-    created: function () {
-        document.addEventListener('keypress', this.moveCursor);
-    },
-
-    destroyed() {
-        document.removeEventListener('keypress', this.moveCursor);
     },
 
     mounted: function () {
@@ -251,24 +240,24 @@ let vue = new Vue({
             }
         },
 
-        moveCursor: function (event) {
-            switch (event.key.toLowerCase()) {
-                case 'z':
+        moveCursor: function (direction) {
+            switch (direction) {
+                case 'up':
                     // go up
                     this.cursor.i--;
                     if (this.cursor.i < 0) { this.cursor.i = SIZE - 1; }
                     break;
-                case 's':
+                case 'down':
                     //go down
                     this.cursor.i++;
                     if (this.cursor.i > SIZE - 1) { this.cursor.i = 0; }
                     break;
-                case 'q':
+                case 'left':
                     //go left
                     this.cursor.j--;
                     if (this.cursor.j < 0) { this.cursor.j = SIZE - 1; }
                     break;
-                case 'd':
+                case 'right':
                     //go right
                     this.cursor.j++;
                     if (this.cursor.j > SIZE - 1) { this.cursor.j = 0; }

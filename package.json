@@ -1,9 +1,11 @@
 {
   "name": "pokegame",
+  "app-name": "pokegame-app",
   "version": "1.0.0",
   "description": "Voltorbataille",
   "main": "index.html",
   "dependencies": {
+    "androidjs": "^2.0.4",
     "vue": "^2.6.11"
   },
   "devDependencies": {},

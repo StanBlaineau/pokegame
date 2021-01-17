@@ -46,22 +46,32 @@ hr {
     font-size: 35px;
     color: #222222;
     background-color: #fafafa;
+    background-image: url('../img/assets1/96Thefinalcard.png');
+    background-repeat: no-repeat;
+    height: 96px;
+    width: 96px;
+    border: 0;
 }
 
 .card-game.guessed {
-    border-color: #0000EE;
-    background-color: #47ecee;
-    color: #0000EE;
+    border: 0;
+    background-image: url('../img/assets1/96BackCard.png');
 }
 
 .card-game:hover {
-    border-color: #0000EE;
-    color: #0000EE;
     cursor: pointer;
 }
 
+.card-side {
+    border: 0;
+    background-image: url('../img/assets1/panneaux1etdemilight.png');
+    background-repeat: no-repeat;
+    height: 96px;
+    width: 96px;
+    font-weight: 700;
+}
+
 .card-game.cursoredCard {
-    border: 3px solid #E00;
     color: #E00;
 }
 
@@ -84,3 +94,5 @@ hr {
     margin: 0 5px;
     width: 40px;
 }
+
+.mtop50 { margin-top: 50px; }

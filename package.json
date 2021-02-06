@@ -1,16 +1,29 @@
 {
-  "name": "pokegame",
-  "app-name": "pokegame-app",
+  "name": "pokegame2",
+  "app-name": "pokegame2",
   "version": "1.0.0",
   "description": "Voltorbataille",
-  "main": "index.html",
+  "main": "main.js",
+  "project-type": "webview",
+  "project-name": "pokegame",
+  "package-name": "pokegame",
+  "icon": "./assets/img/96ThefinalcardHover.png",
+  "dist-path": "./dist",
+  "screenOrientation": "landscape",
   "dependencies": {
     "androidjs": "^2.0.4",
     "vue": "^2.6.11"
   },
+  "permission": [
+    "android.permission.INTERNET"
+  ],
+  "theme": {
+    "fullScreen": true
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node main.js",
+    "build": "androidjs build"
   },
   "repository": {
     "type": "git",

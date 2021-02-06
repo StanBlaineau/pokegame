@@ -15,7 +15,8 @@ let vue = new Vue({
         },
         states: {
             end: false,
-            success: false
+            success: false,
+            param: false
         },
         level: 1,
         cursor: {

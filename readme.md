@@ -12,7 +12,7 @@ Règles du jeu
 
 Le jeu comporte 25 cartes, sur une grille de 5*5.
 
-Dérrière ces cartes on peut y retrouver une bombe, le chiffre 1, 
+Derrière ces cartes on peut y retrouver une bombe, le chiffre 1, 
  le chiffre 2 ou le chiffre 3.
  
 Le but du jeu est de trouver tous les 2 et 3 cachés derrière les cartes.
@@ -30,8 +30,8 @@ Il y a un nombre infini de niveaux.
 Afin de trouver les bonnes cartes, à la fin de chaque colonne et de chaque ligne, 
 il y a d'inscrit le nombre de bombes et la somme des chiffres présents.
 
-Afin de juoer, vous pouvez deplacer un curseur entre les cartes avec les touches q,s,z,d 
-et annoter les cartes en fonction de ce que vous pouver deviner.
+Afin de jouer, vous pouvez déplacer un curseur entre les cartes avec les touches q,s,z,d 
+et annoter les cartes en fonction de ce que vous pouvez deviner.
 
 Pour cela lorsque le curseur est sur une carte, vous pouvez cliquer sur les 4 boutons B, 1, 2, 3.
 

@@ -52,7 +52,7 @@ hr {
 .card-game {
     font-size: 35px;
     color: #222222;
-    background-image: url('../img/assets1/96Thefinalcard.png');
+    background-image: url('../img/96Thefinalcard.png');
     background-repeat: no-repeat;
     height: 96px;
     width: 96px;
@@ -61,7 +61,7 @@ hr {
 
 .card-game.guessed {
     border: 0;
-    background-image: url('../img/assets1/96BackCard.png');
+    background-image: url('../img/96BackCard.png');
 }
 
 .card-game:hover {
@@ -70,7 +70,7 @@ hr {
 
 .card-side {
     border: 0;
-    background-image: url('../img/assets1/panneaux1etdemilight.png');
+    background-image: url('../img/panneaux1etdemilight.png');
     background-repeat: no-repeat;
     height: 96px;
     width: 96px;
@@ -78,7 +78,7 @@ hr {
 }
 
 .card-game.cursoredCard {
-    background-image: url('../img/assets1/96ThefinalcardHover.png');
+    background-image: url('../img/96ThefinalcardHover.png');
 }
 
 .card-side, .card-side .card-body {
